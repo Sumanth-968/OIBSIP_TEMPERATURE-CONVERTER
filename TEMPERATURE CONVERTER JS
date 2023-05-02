@@ -1,0 +1,36 @@
+
+function sub(){
+var a =parseFloat(document.getElementById("Tempno").value);
+
+var c = document.getElementById("temp_diff").value;
+let out1;
+let out2;
+if(c === "cel"){
+    let fahrenheit = ((a * 9 / 5) + 32).toFixed(2);
+    out1 = fahrenheit.toString();
+    out1=out1 +" Fahrenheit";
+    let kelvin = (a + 273.15).toFixed(2);
+    out2 = kelvin.toString();
+    out2 = out2 +" Kelvin";
+}
+else if(c === "fah"){
+    let celsius = ((a - 32) * 5 / 9).toFixed(2);
+    out1 = celsius.toString();
+    out1 =out1 +" Celsius";
+    let kelvin = ((a - 32) * (5/9) + 273.15).toFixed(2);
+    out2 = kelvin.toString();
+    out2 = out2 +" Kelvin";
+}
+else if(c === "kel"){
+    let celsius = (a - 273.15).toFixed(2);
+    out1 = celsius.toString();
+    out1 =out1 +" Celsius";
+    let fahrenheit = ((a - 273.15) * 1.8 + 32).toFixed(2);
+    out2 = fahrenheit.toString();
+    out2 = out2 +" Fahrenheit";
+}
+document.getElementById("result1").innerHTML=out1;
+document.getElementById("result2").innerHTML=out2;
+
+}
+
